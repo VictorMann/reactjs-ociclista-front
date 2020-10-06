@@ -1,0 +1,10 @@
+.he--ctn {
+    display: flex;
+}
+.logo {
+    display: inline-block;
+    width: 6em;
+}
+.logo img {
+    max-width: 100%;
+}

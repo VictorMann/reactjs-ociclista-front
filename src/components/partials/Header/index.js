@@ -2,6 +2,13 @@ import React from 'react';
 import './styled.css';
 
 import logo from '../../../public/images/logo.png';
+
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
+
 export default () => {
 
     const isLogged = false;
@@ -9,9 +16,11 @@ export default () => {
 
     return (
         <header className="_t he tr">
-            <div className="ctn br">
-                <div class="ar ar-logo">
-                    <a href="javascript:;" class="bt-hamb"><i class="fas fa-bars"></i></a>
+            <div className="he--ctn ctn br">
+                <div class="he--logo">
+                    <a href="javascript:;" class="bt-hamb">
+                        <MenuIcon />
+                    </a>
                     <a href="{{ url('/') }}" class="logo">
                         <img src={logo} alt="Logo OCiclista" />
                     </a>
@@ -35,15 +44,19 @@ export default () => {
                             </form>
                         :
                             <a href="{{ route('login') }}" class="user-entry" title="Entre ou cadastre-se">
-                                <i class="fas fa-user-circle"></i>
+                                <AccountCircleIcon />
                                 <span>Entre ou cadastre-se</span>
                             </a>
                     }
                 </div>
                 <div class="ar ar-cart">
-                    <a href="{{ route('cliente.account') }}#favoritos" class="heart-view"><i class="fas fa-heart"></i></a>
+                    <a href="{{ route('cliente.account') }}#favoritos" class="heart-view">
+                        <FavoriteIcon />
+                    </a>
                     <div class="cx-cart">
-                        <a href="javascript:;" class="cart-view" data-qtd="0"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="javascript:;" class="cart-view" data-qtd="0">
+                            <ShoppingCartIcon />
+                        </a>
                         <div class="cart-flut flx-column flx-align-center flx-justify-center">
 
                             {/* @if ($listCart)
