@@ -1,3 +1,7 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
 ._t {
     display: flex;
     justify-content: center;
@@ -12,4 +16,16 @@
 }
 .tr {
     border: 1px dashed blue;
+}
+.flx {
+    display: flex;
+}
+.l-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.txt-replacement {
+    text-indent: -999px;
+    overflow: hidden;
 }

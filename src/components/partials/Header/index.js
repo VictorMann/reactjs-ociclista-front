@@ -7,7 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
 
@@ -25,7 +25,7 @@ export default () => {
                         <img src={logo} alt="Logo OCiclista" />
                     </a>
                 </div>
-                <div class="ar ar-user">
+                <div class="he--user">
                     {isLogged
                         ?
                             <form class="user-entry user-active" id="fuser" style={{display: 'inline-block'}} action="{{ route('logout') }}" method="POST">
@@ -49,7 +49,7 @@ export default () => {
                             </a>
                     }
                 </div>
-                <div class="ar ar-cart">
+                <div class="he--cart">
                     <a href="{{ route('cliente.account') }}#favoritos" class="heart-view">
                         <FavoriteIcon />
                     </a>
@@ -91,16 +91,16 @@ export default () => {
                         </div>
                     </div>
                 </div>
-                <div class="ar ar-search">
-                    <ul class="l-intera l-reset flx">
+                <div class="he--search">
+                    <ul class="he--l-at l-reset flx">
                         <li><a href="{{ route('atendimento') }}" class="atend-cliente" title="Atendimento" onclick="event.preventDefault()">Atendimento</a></li>
                         <li><a href="{{ route('quem-somos') }}" title="Quem somos">Quem somos</a></li>
                         <li><a href="{{ route('politica-de-privacidade') }}" title="Política de privacidade">Politica de privacidade</a></li>
                     </ul>
-                    <form class="f-search flx" action="{{ route('busca.index') }}" method="GET">
-                        <div class="selectx">
-                            <span class="text-catselect">Todos</span>
-                            <select name="c" id="select-cat">
+                    <form class="he--f-search flx" action="{{ route('busca.index') }}" method="GET">
+                        <div class="he--s-ar">
+                            <span class="he--txt-s-cat">Todos</span>
+                            <select name="c" class="he--s-cat">
                                 <option value="">Todos</option>
                                 <option value="acessorios">Acessórios</option>
                                 <option value="bicicletas">Bicicletas</option>
@@ -116,23 +116,14 @@ export default () => {
                                 <option value="vestuario">Vestuário</option>
                             </select>
                         </div>
-                        <input type="text" name="s" id="campo-busca" placeholder="O que você deseja encontrar?" required />
-                        <button type="submit" class="txt-replacement">buscar</button>
-                        <ul class="popup-cat-selectx">
-                            <li data-ref="all" style={{color: '#2196F3'}}>Todos</li>
-                            <li data-ref="acessorios">Acessórios</li>
-                            <li data-ref="bicicletas">Bicicletas</li>
-                            <li data-ref="calcados">Calçados</li>
-                            <li data-ref="kids">kids</li>
-                            <li data-ref="kits">kits</li>
-                            <li data-ref="manutencao">Manutenção</li>
-                            <li data-ref="mulheres">Mulheres</li>
-                            <li data-ref="pecas">Peças</li>
-                            <li data-ref="protecao-e-seguranca">Proteção e segurança</li>
-                            <li data-ref="quadros">Quadros</li>
-                            <li data-ref="treinamentos">Treinametos</li>
-                            <li data-ref="vestuario">Vestuário</li>
-                        </ul>
+                        <input type="text" name="s" className="he--input" placeholder="O que você deseja encontrar?" required />
+                        <div className="he--submit">
+                            <SearchIcon 
+                                style={{ 
+                                    color: 'white',
+                                    fontSize: '32px'
+                                }} />
+                        </div>
                     </form>
                 </div>
             </div>
